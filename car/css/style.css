@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+    --car: rgb(209, 61, 61);
+    --bg: rgb(146, 221, 255);
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.container {
+    position: absolute;
+    width: 500px;
+    height: 240px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.car-body-container {
+    position: absolute;
+    animation: shake 200ms 100ms infinite cubic-bezier(.72,0,.27,1) alternate;
+}
+
+.car-body {
+    position: absolute;
+    width: 400px;
+    height: 60px;
+    border-radius: 0 0 40px 40px;
+    background-color: var(--car);
+    top: 120px;
+    left: 50px;
+}
+
+.car-body::before {
+    content: "";
+    position: absolute;
+    border-bottom: 100px solid var(--car);
+    border-left: 30px solid transparent;
+	border-right: 100px solid transparent;
+	height: 0;
+    width: 210px;
+    transform: translate(0, -100px);
+}
+
+.car-body::after {
+    content: "";
+    position: absolute;
+	width: 150px;
+    height: 50px;
+    transform: translate(250px, -50px);
+    background-color: var(--car);
+    border-radius: 0 50% 0 0;
+}
+
+
+@keyframes shake {
+    100% {
+        transform: translateY(4px);
+    }
+}
+
+
+
+.wheel-area-1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: black;
+    top: 120px;
+    left: 95px;
+    clip-path: polygon(-6px 60px, 125px 60px, 125px -14px, -26px -18px);
+    
+}
+
+.wheel-1 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #444;
+    top: 130px;
+    left: 105px;
+    animation: shake 200ms infinite cubic-bezier(.72,0,.27,1) alternate;
+}
+
+.wheel-1::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 10px;
+    left: 10px;
+}
+
+
+
+.wheel-area-2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: black;
+    top: 120px;
+    left: 310px;
+    clip-path: polygon(114px 60px, 120px -19px, -34px -12px, -31px 60px);
+}
+
+.wheel-2 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #444;
+    top: 130px;
+    left: 320px;
+    animation: shake 200ms 50ms infinite cubic-bezier(.72,0,.27,1) alternate;
+}
+
+.wheel-2::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 10px;
+    left: 10px;
+}
+
+.windows {
+    position: absolute;
+    border-bottom: 40px solid black;
+    border-left: 0px solid transparent;
+	border-right: 40px solid transparent;
+	height: 0;
+    width: 50px;
+    top: 30px;
+    left: 230px;
+}
+
+.windows::before {
+    content: "";
+    position: absolute;
+    background-color: black;
+	height: 40px;
+    width: 80px;
+    left: -90px;
+}
+
+.windows::after {
+    content: "";
+    position: absolute;
+    border-bottom: 40px solid black;
+    border-left: 10px solid transparent;
+	border-right: 0px solid transparent;
+	height: 0;
+    width: 30px;
+    left: -140px;
+}
+
+.headlight {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background-color: rgb(255, 255, 149);
+    left: 420px;
+    top: 90px;
+    border-radius: 6px;
+}
