@@ -2,25 +2,24 @@
     padding: 0;
     margin: 0;
     --car: rgb(154, 78, 216);
-    --bg: rgb(146, 221, 255);
+    --bg: rgb(105, 255, 100);
 }
 
-body {
-    background-color: var(--bg);
-}
 
-.container {
+
+.car-container {
     position: absolute;
     width: 500px;
-    height: 240px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(2); /*change scale to fit your content*/
+    height: 400px;
+    background-color: var(--bg);
 }
 
 .car-body-container {
     position: absolute;
     animation: shake 300ms 150ms infinite cubic-bezier(.72,0,.27,1) alternate;
+    left: 25%;
+    top: 140px;
+    transform: translate(-50%, -50%) scale(0.5);
 }
 
 .car-body {
@@ -57,7 +56,7 @@ body {
 
 @keyframes shake {
     100% {
-        transform: translateY(3px);
+        transform: translateY(1.5px) scale(0.5);
     }
 }
 
@@ -76,14 +75,15 @@ body {
 
 .wheel-1 {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border: 10px solid #444;
     border-radius: 50%;
     background-color: gray;
-    top: 130px;
-    left: 105px;
+    top: 185px;
+    left: 157.5px;
     animation: shake 300ms 75ms infinite cubic-bezier(.72,0,.27,1) alternate;
+    transform: scale(0.5);
 }
 
 
@@ -100,29 +100,30 @@ body {
 
 .wheel-2 {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border: 10px solid #444;
     border-radius: 50%;
     background-color: gray;
-    top: 130px;
-    left: 320px;
+    top: 185px;
+    left: 265px;
     animation: shake 300ms 0ms infinite cubic-bezier(.72,0,.27,1) alternate;
+    transform: scale(0.5);
 }
 
 
-.windows {
+.car-windows {
     position: absolute;
     border-bottom: 40px solid black;
     border-left: 0px solid transparent;
 	border-right: 40px solid transparent;
 	height: 0;
-    width: 50px;
+    width: 95px;
     top: 30px;
     left: 230px;
 }
 
-.windows::before {
+.car-windows::before {
     content: "";
     position: absolute;
     background-color: black;
@@ -131,7 +132,7 @@ body {
     left: -90px;
 }
 
-.windows::after {
+.car-windows::after {
     content: "";
     position: absolute;
     border-bottom: 40px solid black;
